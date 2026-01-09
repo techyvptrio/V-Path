@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>All AI In One Frame</title>
+<link rel="icon" type="image/png" href="logo.png">
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+}
+
+header {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+header img {
+  height: 80px;
+  display: block;
+  margin: 0 auto 10px auto;
+}
+
+.container {
+  display: flex;
+  height: calc(100vh - 60px);
+}
+
+/* LEFT PANEL */
+.sidebar {
+  width: 280px;
+  background: white;
+  padding: 10px;
+  border-right: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar button {
+  margin-bottom: 6px;
+  padding: 10px;
+  border: none;
+  background: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.sidebar button:hover {
+  background: #0056b3;
+}
+
+/* QUICK NOTES */
+.notepad {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.notepad h4 {
+  text-align: center;
+  margin: 5px 0;
+}
+
+.notepad textarea {
+  flex: 1;
+  resize: none;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.notepad .note-buttons button {
+  margin-top: 5px;
+  width: 100%;
+}
+
+/* CONTENT */
+.content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.page {
+  background: white;
+  padding: 25px;
+  width: 85%;
+  margin: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h2, h3 {
+  text-align: center;
+}
+
+ul {
+  margin-left: 25px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>AI Tools for Students & Society</h1>
+</header>
+
+<div class="container">
+
+  <!-- LEFT SIDE -->
+  <div class="sidebar">
+    <button onclick="openSite('https://chat.openai.com')">ChatGPT AI</button>
+    <button onclick="openSite('https://www.google.com')">Google</button>
+    <button onclick="openSite('https://www.perplexity.ai')">Perplexity AI</button>
+    <button onclick="openSite('https://github.com/features/copilot')">Copilot AI</button>
+    <button onclick="openSite('https://gemini.google.com')">Gemini AI</button>
+
+    <div class="notepad">
+      <h4>📝 Quick Notes</h4>
+      <textarea id="notes" placeholder="Write your notes here..."></textarea>
+
+      <div class="note-buttons">
+        <button onclick="downloadNotes()">💾 Save Notes</button>
+        <button onclick="clearNotes()" style="background:#dc3545;">🗑 Clear Notes</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT CONTENT -->
+  <div class="content">
+    <div class="page">
+
+<h2>Artificial Intelligence (AI)</h2>
+<p>
+Artificial Intelligence refers to the simulation of human intelligence in machines.
+AI tools help students learn better and help society improve efficiency, innovation,
+and problem solving.
+</p>
+
+<h3>Major AI Tools</h3>
+
+<h4>1. ChatGPT</h4>
+<p>
+ChatGPT helps students understand concepts, write assignments, prepare for exams,
+and solve coding problems.
+</p>
+<b>Advantages:</b>
+<ul>
+  <li>Fast learning support</li>
+  <li>24/7 availability</li>
+  <li>Improves writing & understanding</li>
+</ul>
+<b>Disadvantages:</b>
+<ul>
+  <li>May give incorrect answers</li>
+  <li>Over-dependency risk</li>
+</ul>
+
+<h4>2. Google AI</h4>
+<p>
+Google AI improves search, translation, and information access worldwide.
+</p>
+<b>Advantages:</b>
+<ul>
+  <li>Accurate search results</li>
+  <li>Global knowledge access</li>
+</ul>
+<b>Disadvantages:</b>
+<ul>
+  <li>Information overload</li>
+  <li>Privacy concerns</li>
+</ul>
+
+<h4>3. Perplexity AI</h4>
+<p>
+Perplexity AI provides research-based answers with sources.
+</p>
+<b>Advantages:</b>
+<ul>
+  <li>Reliable academic support</li>
+  <li>Source-based answers</li>
+</ul>
+<b>Disadvantages:</b>
+<ul>
+  <li>Limited creativity</li>
+  <li>Paid advanced features</li>
+</ul>
+
+<h4>4. GitHub Copilot</h4>
+<p>
+Copilot helps programmers write code efficiently.
+</p>
+<b>Advantages:</b>
+<ul>
+  <li>Faster coding</li>
+  <li>Reduces errors</li>
+</ul>
+<b>Disadvantages:</b>
+<ul>
+  <li>Paid tool</li>
+  <li>Code quality depends on usage</li>
+</ul>
+
+<h4>5. Gemini AI</h4>
+<p>
+Gemini AI handles text, images, and reasoning tasks.
+</p>
+<b>Advantages:</b>
+<ul>
+  <li>Advanced intelligence</li>
+  <li>Creative solutions</li>
+</ul>
+<b>Disadvantages:</b>
+<ul>
+  <li>Complex for beginners</li>
+  <li>Internet dependency</li>
+</ul>
+
+<h3>AI for Students</h3>
+<ul>
+  <li>Personalized learning</li>
+  <li>Skill development</li>
+  <li>Better exam preparation</li>
+</ul>
+
+<h3>AI for Society</h3>
+<ul>
+  <li>Healthcare improvement</li>
+  <li>Automation & efficiency</li>
+  <li>Economic growth</li>
+</ul>
+
+<h3>Conclusion</h3>
+<p>
+AI tools are powerful when used responsibly. They should support human intelligence,
+not replace it.
+</p>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+function openSite(url) {
+  window.open(url, "_blank");
+}
+
+/* QUICK NOTES LOGIC */
+const notes = document.getElementById("notes");
+const KEY = "quick_notes_text";
+
+notes.value = localStorage.getItem(KEY) || "";
+
+notes.addEventListener("input", () => {
+  localStorage.setItem(KEY, notes.value);
+});
+
+function clearNotes() {
+  if (confirm("Clear all notes?")) {
+    localStorage.removeItem(KEY);
+    notes.value = "";
+  }
+}
+
+function downloadNotes() {
+  if (!notes.value.trim()) {
+    alert("No notes to save!");
+    return;
+  }
+
+  const blob = new Blob([notes.value], { type: "text/plain" });
+  const url = URL.createObjectURL(blob);
+
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "Quick_Notes.txt";
+  a.click();
+
+  URL.revokeObjectURL(url);
+}
+</script>
+
+</body>
+</html>
